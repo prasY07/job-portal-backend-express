@@ -1,0 +1,688 @@
+{
+	"info": {
+		"_postman_id": "69897ecb-ea1f-4f0b-acfa-c7bb42d1af27",
+		"name": "Job-portal",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30520993"
+	},
+	"item": [
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Technology",
+					"item": [
+						{
+							"name": "all",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url_admin}}technology/all-list",
+									"host": [
+										"{{base_url_admin}}technology"
+									],
+									"path": [
+										"all-list"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "add",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\":\"qwqwqw\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url_admin}}technology/add",
+									"host": [
+										"{{base_url_admin}}technology"
+									],
+									"path": [
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\":\"ssss\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url_admin}}technology/652d2ae13c57b163faf96de1/update",
+									"host": [
+										"{{base_url_admin}}technology"
+									],
+									"path": [
+										"652d2ae13c57b163faf96de1",
+										"update"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"auth": {
+						"type": "bearer",
+						"bearer": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoiNjUyZDJhZTM0MjkxMzYxNzYxNjQwY2ZjIiwiZW1haWwiOiJhZG1pbkBhZG1pbi5jb20iLCJpYXQiOjE2OTgwNTc1MDksImV4cCI6MTY5ODA2MTEwOX0.yf_e5b9ds7neeAGqS76bDeLrTYf86ps5fEGkzs_mH0M",
+								"type": "string"
+							}
+						]
+					},
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "Auth",
+					"item": [
+						{
+							"name": "login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\":\"admin@admin.com\",\n    \"password\":\"12345678\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url_admin}}auth/login",
+									"host": [
+										"{{base_url_admin}}auth"
+									],
+									"path": [
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "logout",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoiNjUyZDJhZTM0MjkxMzYxNzYxNjQwY2ZjIiwiZW1haWwiOiJhZG1pbkBhZG1pbi5jb20iLCJpYXQiOjE2OTgwNTcyODUsImV4cCI6MTY5ODA2MDg4NX0.EsWiUtA7ZfcdqGV_HSMDHUIDo9acVsS2de3GvQ_RASk",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url_admin}}auth/logout",
+									"host": [
+										"{{base_url_admin}}auth"
+									],
+									"path": [
+										"logout"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Job",
+					"item": [
+						{
+							"name": "get-all-job",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}user/jobs/all",
+									"host": [
+										"{{base_url}}user"
+									],
+									"path": [
+										"jobs",
+										"all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "apply for job",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"job_id\" : \"6538d5c81489422f05569edb\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}user/jobs/apply-for-job",
+									"host": [
+										"{{base_url}}user"
+									],
+									"path": [
+										"jobs",
+										"apply-for-job"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "remove-applicaiton",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"job_id\" : \"6538d5c81489422f05569edb\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}user/jobs/remove-application-for-job",
+									"host": [
+										"{{base_url}}user"
+									],
+									"path": [
+										"jobs",
+										"remove-application-for-job"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"auth": {
+						"type": "bearer",
+						"bearer": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTM2MzgyN2RkMzRhZDkyMGZmYzRhMzYiLCJlbWFpbCI6InByYXNoYW50MkBnbWFpbC5jb20iLCJpYXQiOjE2OTg2NDQwMjYsImV4cCI6MTczMDE4MDAyNn0.rjm6Yk_M7GC-huuD68RmroG_UA1aaSVfuKhtBKO1at8",
+								"type": "string"
+							}
+						]
+					},
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "profile",
+					"item": [
+						{
+							"name": "get-profile",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}user/profile",
+									"host": [
+										"{{base_url}}user"
+									],
+									"path": [
+										"profile"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update-profile",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\":\"test\",\n    \"email\" : \"aaa@gmail.com\",\n    \"skills\" : [\"652d2ae13c57b163faf96de1\"]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}user/update-profile",
+									"host": [
+										"{{base_url}}user"
+									],
+									"path": [
+										"update-profile"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"auth": {
+						"type": "bearer",
+						"bearer": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTM2MzgyN2RkMzRhZDkyMGZmYzRhMzYiLCJlbWFpbCI6InByYXNoYW50MkBnbWFpbC5jb20iLCJpYXQiOjE2OTg2NDQwMjYsImV4cCI6MTczMDE4MDAyNn0.rjm6Yk_M7GC-huuD68RmroG_UA1aaSVfuKhtBKO1at8",
+								"type": "string"
+							}
+						]
+					},
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Company",
+			"item": [
+				{
+					"name": "Jobs",
+					"item": [
+						{
+							"name": "add",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\":\"PHP developer\",\n    \"description\": \"Test\",\n    \"exp_in_years\":2,\n    \"exp_in_month\":3,\n    \"technologies\": [\"652d2ae13c57b163faf96de1\"]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}company/job/add",
+									"host": [
+										"{{base_url}}company"
+									],
+									"path": [
+										"job",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "edit",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\":\"PHP developer\",\n    \"description\": \"3243243232\",\n    \"exp_in_years\":2,\n    \"exp_in_month\":3,\n    \"technologies\": [\"652d2ae23c57b163faf96ed7\"]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}company/job/6538d70254ca8a8d3b5aa24a/update",
+									"host": [
+										"{{base_url}}company"
+									],
+									"path": [
+										"job",
+										"6538d70254ca8a8d3b5aa24a",
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}company/job/all",
+									"host": [
+										"{{base_url}}company"
+									],
+									"path": [
+										"job",
+										"all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "job-applied-user",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}company/job/all-applied-users?id=6538d5c81489422f05569edb&page=1",
+									"host": [
+										"{{base_url}}company"
+									],
+									"path": [
+										"job",
+										"all-applied-users"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "6538d5c81489422f05569edb"
+										},
+										{
+											"key": "page",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"auth": {
+						"type": "bearer",
+						"bearer": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTM4YzFhMDNiZjJiZGE1MDg3MmE4YjEiLCJlbWFpbCI6InByYXNoYW50MmFzZEBnbWFpbC5jb20iLCJpYXQiOjE2OTg5OTQ3OTAsImV4cCI6MTczMDUzMDc5MH0.68ILadwgagu7c0nRa8MGjy3iGhaklMK_LLeVFeMnbOQ",
+								"type": "string"
+							}
+						]
+					},
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "profile",
+					"item": [
+						{
+							"name": "get-profile",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}company/profile",
+									"host": [
+										"{{base_url}}company"
+									],
+									"path": [
+										"profile"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update-profile",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\":\"wqewqp\",\n    \"email\" : \"prashant2asd@gmail.com\",\n    \"company_name\" : \"test\",\n    \"company_address\" : \"jaipur\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}company/update-profile",
+									"host": [
+										"{{base_url}}company"
+									],
+									"path": [
+										"update-profile"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"auth": {
+						"type": "bearer",
+						"bearer": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTM4YzFhMDNiZjJiZGE1MDg3MmE4YjEiLCJlbWFpbCI6InByYXNoYW50MjFAZ21haWwuY29tIiwiaWF0IjoxNjk4NjYyODM0LCJleHAiOjE3MzAxOTg4MzR9.bm06M2jMvyo8fGuRtLMabOWvgX3YejkvnOg4OFnM5Ok",
+								"type": "string"
+							}
+						]
+					},
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "company_user",
+			"item": [
+				{
+					"name": "Auth",
+					"item": [
+						{
+							"name": "register",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\":\"Prashant Yadav\",\n    \"email\" : \"prashant21@gmail.com\",\n    \"role\" : \"company\",\n    \"password\" : \"12345678\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}auth/register",
+									"host": [
+										"{{base_url}}auth"
+									],
+									"path": [
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\" : \"prashant2asd@gmail.com\",\n    \"password\" : \"12345678\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}auth/login",
+									"host": [
+										"{{base_url}}auth"
+									],
+									"path": [
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "logout",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTJjZjI4MjZlMjI0NzVjNTEzZTdlNGIiLCJlbWFpbCI6InByYXNoYW50MkBnbWFpbC5jb20iLCJpYXQiOjE2OTc1MjAzMTQsImV4cCI6MTY5NzUyMzkxNH0.j2yDKKBUG1lVRbTOqehgaBGgL-IIrnG5hAPd_O6WDTk",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\" : \"prashant2@gmail.com\",\n    \"password\" : \"12345678\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}auth/logout",
+									"host": [
+										"{{base_url}}auth"
+									],
+									"path": [
+										"logout"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
