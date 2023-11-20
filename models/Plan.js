@@ -13,6 +13,10 @@ const planSchema = new Schema({
         type:String,
         required:true,
     },
+    duration:{
+        type:Number,
+        required:true,
+    },
  
 });
 export default mongoose.model("Plan", planSchema);

@@ -4,7 +4,7 @@ import { Schema } from "mongoose";
 const schema = mongoose.Schema;
 
 const transactionHistory = new Schema({
-    transactionId: {
+    payment_id: {
         type:String,
         required:true,
         unique:true

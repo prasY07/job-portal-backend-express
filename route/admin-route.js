@@ -14,4 +14,5 @@ adminRouter.get('/auth/logout', logout);
 adminRouter.get('/technology/all-list', list);
 adminRouter.post('/technology/add', addTechnology);
 adminRouter.put('/technology/:id/update',updateTechnologyRequest, updateTechnology);
+
 export default adminRouter;
