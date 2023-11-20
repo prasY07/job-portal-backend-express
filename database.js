@@ -1,8 +1,10 @@
 import mongoose from 'mongoose';
-
+import { config as configDotenv } from 'dotenv';
+configDotenv();
 const connectToDatabase = async () => {
   try {
-    await mongoose.connect('mongodb+srv://prashanty:tSaf6XpD95rlMa0L@cluster0.4v3tosv.mongodb.net/?retryWrites=true&w=majority', {
+    const dbString = process.env.dbString;
+    await mongoose.connect(dbString, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });

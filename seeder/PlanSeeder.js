@@ -18,10 +18,11 @@ export const planSeeder = async () => {
   ];
   for (const plan of plans) {
     try {
-      const newPlan = await Plan.findOneAndUpdate(
-        { name: plan.plan, price:plan.price },
-        { upsert: true, new: true }
-      );
+ 
+      const filter = { name: plan.name, price: plan.price };
+      const update = { name: plan.name, price: plan.price };
+      const options = { upsert: true, new: true };
+      const newPlan = await Plan.findOneAndUpdate(filter, update, options);
     } catch (error) {
       console.error('Error inserting/updating plan:', error);
     }
