@@ -10,4 +10,6 @@ node seeder/DatabaseSeeder.js
 #create new file 
 node files/create-file.js foleder_name ,file_name ,path
 
+#ngrock connet
+ngrok http [port]
 

@@ -13,9 +13,9 @@ app.use('/api/',authRouter);
 app.use('/api/admin/',adminRouter);
 app.use('/api/company/',verifyUserByToken,checkCompanyRole,companyRouter)
 app.use('/api/user/',verifyUserByToken,checkUserRole,userRouter)
-
+app.use('/api/razorpay-webhook',companyRouter);
 connectToDatabase();
 
-app.listen(5001, () => {
-  console.log('Server is running on port 5001');
+app.listen(5000, () => {
+  console.log('Server is running on port 5000');
 });

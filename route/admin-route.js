@@ -4,6 +4,7 @@ import { validateLogin } from "../request/LoginValidation.js";
 import { verifyAdminByToken } from "../middleware/AdminAuthMiddleware.js";
 import { addTechnology, list, updateTechnology } from "../controllers/Admin/TechnologyController.js";
 import { updateTechnologyRequest } from "../request/Admin/UpdateTechnologyRequest.js";
+import { webHook } from "../controllers/Company/SubscriptionController.js";
 
 const adminRouter = express.Router();
 
