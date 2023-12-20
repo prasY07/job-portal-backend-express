@@ -7,17 +7,18 @@ import { verifyUserByToken } from './middleware/AuthMiddleware.js';
 import { checkCompanyRole, checkUserRole } from './middleware/CheckRole.js';
 import userRouter from './route/user-route.js';
 import rateLimit from 'express-rate-limit';
-
+import cors from 'cors';
 const limiter = rateLimit({
   windowMs: 60 * 1000, // 1 minute
   max: 10, // limit each IP to 15 requests per windowMs
   handler: (req, res) => {
-    res.status(429).send('Too many attempts, please try again later.');
+     res.status(429).json(errorResponse("To many attemps"));
   },
 });
 
 const app  = express();
 app.use(express.json());
+app.use(cors());
 app.use(limiter);
 app.use('/api/',authRouter);
 app.use('/api/admin/',adminRouter);
